@@ -91,6 +91,22 @@
 <link rel="stylesheet" href="/index.css">
 </head>
   <body class="bg-slate-50 text-slate-900 antialiased">
+    <!-- Hidden Netlify Forms for detection at build time (React renders forms client-side, so Netlify can't detect them without this) -->
+    <form name="quick-consultation" netlify netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="quick-consultation" />
+      <input type="hidden" name="bot-field" />
+      <input type="email" name="email" />
+    </form>
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="hidden" name="bot-field" />
+      <input type="text" name="firstName" />
+      <input type="text" name="lastName" />
+      <input type="email" name="email" />
+      <select name="topic"></select>
+      <textarea name="message"></textarea>
+    </form>
+
     <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
 </body>

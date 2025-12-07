@@ -138,15 +138,17 @@ const ContactPage: React.FC = () => {
                     </button>
                   </div>
                 ) : (
-                  <form 
-                    name="contact" 
-                    method="POST" 
-                    data-netlify="true" 
-                    onSubmit={handleSubmit} 
+                  <form
+                    name="contact"
+                    method="POST"
+                    data-netlify="true"
+                    data-netlify-honeypot="bot-field"
+                    onSubmit={handleSubmit}
                     className="space-y-6"
                   >
                      {/* Hidden Input for Netlify Forms */}
                      <input type="hidden" name="form-name" value="contact" />
+                     <input type="hidden" name="bot-field" />
                      
                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-2">

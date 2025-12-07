@@ -280,13 +280,15 @@ const Hero: React.FC<HeroProps> = ({ setPage }) => {
             </div>
 
             {/* NETLIFY QUICK LEAD FORM */}
-            <form 
-              name="quick-consultation" 
-              data-netlify="true" 
+            <form
+              name="quick-consultation"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
               method="POST"
               className="mt-6 mb-10 p-6 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm animate-fade-in-up [animation-delay:800ms] opacity-0 max-w-xl"
             >
                 <input type="hidden" name="form-name" value="quick-consultation" />
+                <input type="hidden" name="bot-field" />
                 <p className="text-accent-400 font-bold mb-4 flex items-center gap-2 text-sm md:text-base">
                     <Sparkles size={16} /> Get a Free 15-Minute Consultation. No commitment.
                 </p>
