@@ -241,15 +241,15 @@ const Hero: React.FC<HeroProps> = ({ setPage }) => {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-accent-400 text-xs font-bold tracking-wider uppercase mb-8 backdrop-blur-sm animate-fade-in-up">
               <Sparkles size={14} className="text-accent-400" />
-              <span>Next Gen Accounting</span>
+              <span>VIRTUAL & OUTSOURCED ACCOUNTING SOLUTIONS</span>
             </div>
             
             {/* SEO OPTIMIZED H1 */}
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-[1.1] mb-6 animate-fade-in-up [animation-delay:200ms] opacity-0">
-              Strategic Tax Planning <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-primary-200 to-primary-400">& Modern Accounting</span> <br/>
+               Unlock Growth<br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-primary-200 to-primary-400">with Expert Small Business </span> <br/>
               <span className="relative inline-block text-accent-400">
-                for High-Net-Worth Individuals
+               Bookkeeping and Tax Services.
                 <svg className="absolute w-full h-3 -bottom-1 left-0 text-accent-500 opacity-60" viewBox="0 0 100 10" preserveAspectRatio="none">
                    <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="3" fill="none" />
                 </svg>
@@ -258,7 +258,8 @@ const Hero: React.FC<HeroProps> = ({ setPage }) => {
             
             {/* Subtext */}
             <p className="text-lg md:text-xl text-slate-300 mb-8 leading-relaxed max-w-lg animate-fade-in-up [animation-delay:400ms] opacity-0">
-              Vintage Tax blends decades of regulatory expertise with cutting-edge financial architecture. We secure your legacy so you can focus on building it.
+              {/* Vintage Tax blends decades of regulatory expertise with cutting-edge financial architecture. We secure your legacy so you can focus on building it. */}
+              Vintage Taxes LLC is your full-cycle financial partner, delivering monthly bookkeeping, comprehensive payroll processing, and proactive tax preparation. Achieve efficiency and guaranteed compliance without the high cost.
             </p>
             
             {/* CTA Buttons */}
@@ -267,7 +268,7 @@ const Hero: React.FC<HeroProps> = ({ setPage }) => {
                 onClick={() => setPage(PageState.CONTACT)}
                 className="group px-8 py-4 bg-accent-600 hover:bg-accent-500 text-white font-bold rounded-full transition-all shadow-[0_0_30px_rgba(22,163,74,0.2)] hover:shadow-[0_0_40px_rgba(22,163,74,0.4)] hover:-translate-y-1 flex items-center justify-center gap-2 min-w-[180px]"
               >
-                Start Conversation
+                Schedule a Free Consultation
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </button>
               <button 
