@@ -11,7 +11,7 @@ const Footer: React.FC<FooterProps> = ({ setPage }) => {
     <footer className="bg-primary-950 text-primary-100 py-16 border-t border-primary-900 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-          
+
           <div className="col-span-1 md:col-span-1">
             <div className="flex items-center mb-6">
               <Hexagon className="text-accent-500 mr-2" size={28} strokeWidth={2} />
@@ -30,39 +30,44 @@ const Footer: React.FC<FooterProps> = ({ setPage }) => {
           <div>
             <h4 className="text-white font-bold mb-6 text-lg">Services</h4>
             <ul className="space-y-3 text-sm text-primary-300">
-              <li className="hover:text-accent-400 cursor-pointer transition-colors">Personal Tax</li>
-              <li className="hover:text-accent-400 cursor-pointer transition-colors">Corporate Accounting</li>
-              <li className="hover:text-accent-400 cursor-pointer transition-colors">Estate Planning</li>
-              <li className="hover:text-accent-400 cursor-pointer transition-colors">Consulting</li>
+              <li className="hover:text-accent-400 cursor-pointer transition-colors">Strategic Tax Planning</li>
+              <li className="hover:text-accent-400 cursor-pointer transition-colors">Full Cycle Accounting</li>
+              <li className="hover:text-accent-400 cursor-pointer transition-colors">Bookkeeping</li>
+              <li className="hover:text-accent-400 cursor-pointer transition-colors">Payroll Processing</li>
+              <li className="hover:text-accent-400 cursor-pointer transition-colors">Legal Compliances</li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-6 text-lg">Company</h4>
+            <h4 className="text-white font-bold mb-6 text-lg">Useful Links</h4>
             <ul className="space-y-3 text-sm text-primary-300">
+              <li onClick={() => setPage(PageState.HOME)} className="hover:text-accent-400 cursor-pointer transition-colors">Home</li>
+              <li onClick={() => setPage(PageState.SERVICES)} className="hover:text-accent-400 cursor-pointer transition-colors">Services</li>
               <li onClick={() => setPage(PageState.ABOUT)} className="hover:text-accent-400 cursor-pointer transition-colors">About Us</li>
-              <li className="hover:text-accent-400 cursor-pointer transition-colors">Careers</li>
               <li onClick={() => setPage(PageState.CONTACT)} className="hover:text-accent-400 cursor-pointer transition-colors">Contact</li>
-              <li className="hover:text-accent-400 cursor-pointer transition-colors">Privacy Policy</li>
+              <li onClick={() => setPage(PageState.AI_ASSISTANT)} className="hover:text-accent-400 cursor-pointer transition-colors">AI Assistant</li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-6 text-lg">Newsletter</h4>
-            <p className="text-sm text-primary-300 mb-4">Subscribe for tax tips and regulatory updates.</p>
-            <div className="flex flex-col gap-2">
-              <input 
-                type="email" 
-                placeholder="Your email address" 
-                className="bg-primary-900 border border-primary-800 text-white px-4 py-2.5 rounded-lg focus:outline-none focus:border-accent-500 focus:ring-1 focus:ring-accent-500 placeholder-primary-600 text-sm"
-              />
-              <button className="bg-accent-600 hover:bg-accent-500 text-white py-2.5 rounded-lg text-sm font-medium transition-colors">
-                Subscribe
-              </button>
+            <h4 className="text-white font-bold mb-6 text-lg">Contact Us</h4>
+            <div className="space-y-4 text-sm text-primary-300">
+              <p>Kansas, USA</p>
+              <div className="flex flex-col gap-2">
+                <a href="mailto:contact@vintagetaxes.com" className="hover:text-accent-400 transition-colors">contact@vintagetaxes.com</a>
+                <a href="tel:+15551234567" className="hover:text-accent-400 transition-colors">+1 (555) 123-4567</a>
+              </div>
+
+              <a
+                href="tel:+15551234567"
+                className="inline-flex items-center justify-center w-full px-4 py-3 bg-accent-600 hover:bg-accent-500 text-white font-bold rounded-lg transition-all shadow-lg hover:shadow-accent-500/20 text-center"
+              >
+                Free Consultation - Call US Now
+              </a>
             </div>
           </div>
         </div>
-        
+
         <div className="pt-8 border-t border-primary-900 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-primary-500">
           <div>&copy; {new Date().getFullYear()} Vintage Tax & Accounting. All rights reserved.</div>
           <div className="flex gap-6">
