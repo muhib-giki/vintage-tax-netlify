@@ -237,7 +237,7 @@ const Hero: React.FC<HeroProps> = ({ setPage }) => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
 
                {/* Left Content */}
-               <div className="max-w-3xl relative z-20 pt-10 lg:pt-0">
+               <div className="max-w-3xl relative z-20 pt-4 lg:pt-0">
                   {/* Badge */}
                   <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-accent-400 text-xs font-bold tracking-wider uppercase mb-6 backdrop-blur-sm animate-fade-in-up">
                      <Sparkles size={14} className="text-accent-400" />
@@ -245,14 +245,14 @@ const Hero: React.FC<HeroProps> = ({ setPage }) => {
                   </div>
 
                   {/* SEO OPTIMIZED H1 */}
-                  <h1 className="text-4xl md:text-5xl font-serif font-bold leading-[1.1] mb-6 animate-fade-in-up [animation-delay:200ms] opacity-0 text-white">
+                  <h1 className="text-3xl md:text-5xl font-serif font-bold leading-[1.1] mb-4 md:mb-6 animate-fade-in-up [animation-delay:200ms] opacity-0 text-white">
                      Maximize Your Bottom Line<br />
                      <span>by outsourcing your </span> <br />
                      <span>books to Vintage.</span>
                   </h1>
 
                   {/* Subtext */}
-                  <p className="text-lg md:text-xl text-slate-300 mb-6 leading-relaxed max-w-lg animate-fade-in-up [animation-delay:400ms] opacity-0">
+                  <p className="text-base md:text-xl text-slate-300 mb-4 md:mb-6 leading-relaxed max-w-lg animate-fade-in-up [animation-delay:400ms] opacity-0">
                      Gain total peace of mind with a financial partner you can trust. We deliver monthly bookkeeping, seamless payroll, and proactive tax preparation—giving you efficiency and guaranteed compliance without the high cost.
                   </p>
 
