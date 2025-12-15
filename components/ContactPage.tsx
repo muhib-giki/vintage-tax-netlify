@@ -308,7 +308,7 @@ const ContactPage: React.FC = () => {
             </div>
 
             {/* Parking Info */}
-            <div className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm flex gap-4">
+            {/* <div className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm flex gap-4">
               <div className="shrink-0 p-3 bg-accent-50 text-accent-600 rounded-full h-fit">
                 <CheckCircle2 size={20} />
               </div>
@@ -318,7 +318,7 @@ const ContactPage: React.FC = () => {
                   Complimentary valet parking is available for all clients at the main entrance on Heritage Lane.
                 </p>
               </div>
-            </div>
+            </div> */}
 
           </div>
         </div>
