@@ -245,15 +245,10 @@ const Hero: React.FC<HeroProps> = ({ setPage }) => {
                   </div>
 
                   {/* SEO OPTIMIZED H1 */}
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-[1.1] mb-6 animate-fade-in-up [animation-delay:200ms] opacity-0">
+                  <h1 className="text-4xl md:text-5xl font-serif font-bold leading-[1.1] mb-6 animate-fade-in-up [animation-delay:200ms] opacity-0 text-white">
                      Maximize Your Bottom Line<br />
-                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-primary-200 to-primary-400">by outsourcing your </span> <br />
-                     <span className="relative inline-block text-accent-400">
-                        books to Vintage.
-                        <svg className="absolute w-full h-3 -bottom-1 left-0 text-accent-500 opacity-60" viewBox="0 0 100 10" preserveAspectRatio="none">
-                           <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="3" fill="none" />
-                        </svg>
-                     </span>
+                     <span>by outsourcing your </span> <br />
+                     <span>books to Vintage.</span>
                   </h1>
 
                   {/* Subtext */}
@@ -282,36 +277,6 @@ const Hero: React.FC<HeroProps> = ({ setPage }) => {
                         <span>Free Consultation Call</span>
                      </a>
                   </div>
-
-                  {/* NETLIFY QUICK LEAD FORM */}
-                  <form
-                     name="quick-consultation"
-                     data-netlify="true"
-                     data-netlify-honeypot="bot-field"
-                     method="POST"
-                     className="mt-6 mb-6 p-6 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm animate-fade-in-up [animation-delay:800ms] opacity-0 max-w-xl"
-                  >
-                     <input type="hidden" name="form-name" value="quick-consultation" />
-                     <input type="hidden" name="bot-field" />
-                     <p className="text-accent-400 font-bold mb-4 flex items-center gap-2 text-sm md:text-base">
-                        <Sparkles size={16} /> Get a Free 15-Minute Consultation. No commitment.
-                     </p>
-                     <div className="flex flex-col sm:flex-row gap-3">
-                        <input
-                           type="email"
-                           name="email"
-                           required
-                           placeholder="Enter your best email..."
-                           className="flex-1 px-4 py-3 rounded-xl bg-primary-900/50 border border-primary-700 text-white placeholder-primary-400 focus:outline-none focus:ring-2 focus:ring-accent-500 transition-all"
-                        />
-                        <button
-                           type="submit"
-                           className="px-6 py-3 bg-primary-600 hover:bg-primary-500 text-white font-bold rounded-xl transition-all shadow-lg hover:shadow-primary-500/20 whitespace-nowrap"
-                        >
-                           Get Started
-                        </button>
-                     </div>
-                  </form>
 
                   {/* Social Proof */}
                   <div className="flex items-center gap-4 animate-fade-in-up [animation-delay:1000ms] opacity-0">

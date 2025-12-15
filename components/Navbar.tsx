@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Hexagon, ChevronDown } from 'lucide-react';
+import { Menu, X, Hexagon, ChevronDown, Phone } from 'lucide-react';
 import { PageState } from '../types';
 
 interface NavbarProps {
@@ -63,7 +63,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
           </div>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center space-x-1">
+          <div className="hidden md:flex items-center space-x-2">
             {navItems.map((item) => (
               item.subItems ? (
                 <div key={item.label} className="relative group">
@@ -110,6 +110,15 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
                 </button>
               )
             ))}
+
+            {/* Call Button */}
+            <a
+              href="tel:+15551234567"
+              className="ml-4 flex items-center gap-2 px-4 py-2 bg-accent-600 hover:bg-accent-500 text-white rounded-full font-medium text-sm transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
+            >
+              <Phone size={16} />
+              <span>(555) 123-4567</span>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}

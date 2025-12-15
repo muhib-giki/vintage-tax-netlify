@@ -43,7 +43,7 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({
                         <Icon size={14} />
                         Vintage Services
                     </div>
-                    <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6 animate-fade-in-up [animation-delay:200ms]">{title}</h1>
+                    <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 animate-fade-in-up [animation-delay:200ms]">{title}</h1>
                     <p className="text-xl text-primary-100 max-w-2xl mx-auto leading-relaxed animate-fade-in-up [animation-delay:400ms]">{subtitle}</p>
                 </div>
             </div>

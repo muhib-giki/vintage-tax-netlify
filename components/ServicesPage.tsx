@@ -104,11 +104,11 @@ const ServicesPage: React.FC = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-accent-300 text-xs font-bold tracking-widest uppercase mb-6 animate-pulse">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-accent-300 text-xs font-bold tracking-widest uppercase mb-6">
               <Building2 size={14} />
-              Elite Financial Intelligence
+              Strategic Financial BPO Solutions
             </div>
-            <h1 className="text-5xl md:text-6xl font-serif font-bold mb-6 leading-tight">
+            <h1 className="text-5xl md:text-7xl font-serif font-bold mb-6 leading-tight">
               Maximize Wealth. <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-300 to-white">Minimize Liability.</span>
             </h1>

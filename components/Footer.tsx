@@ -18,7 +18,7 @@ const Footer: React.FC<FooterProps> = ({ setPage }) => {
               <span className="font-serif text-2xl text-white font-bold">Vintage Tax</span>
             </div>
             <p className="text-sm leading-relaxed text-primary-300 mb-6">
-              Authentic, reliable, and precise accounting services for the modern era. Establishing trust since 1985.
+              Authentic, reliable, and precise accounting services for the modern era. Your trusted financial partner.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="bg-primary-900 p-2 rounded-lg hover:bg-accent-600 text-white transition-colors"><Linkedin size={18} /></a>
