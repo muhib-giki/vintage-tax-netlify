@@ -3,70 +3,104 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vintage Tax | Modern Accounting</title>
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    
+    <!-- Primary Meta Tags -->
+    <title>Vintage Tax | Tax Planning & Accounting Services in Kansas, Missouri, Illinois & Mississippi</title>
+    <meta name="title" content="Vintage Tax | Tax Planning & Accounting Services in Kansas, Missouri, Illinois & Mississippi" />
+    <meta name="description" content="Professional tax planning, accounting, bookkeeping, and payroll services. Serving Wichita, Kansas City, Chicago, St. Louis, Jackson, and 25+ cities across 4 states. Free consultation available." />
+    <meta name="keywords" content="tax planning, accounting services, bookkeeping, payroll processing, tax preparation, CPA services, Wichita tax accountant, Kansas City accounting, Chicago tax services, St. Louis bookkeeping, Jackson MS accounting, tax planning Kansas, accounting Missouri, tax services Illinois, bookkeeping Mississippi" />
+    <meta name="author" content="Vintage Tax" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://vintagetax.com/" />
+    <meta property="og:title" content="Vintage Tax | Tax Planning & Accounting Services Across 4 States" />
+    <meta property="og:description" content="Professional tax planning, accounting, bookkeeping, and payroll services. Serving 28+ cities across Kansas, Missouri, Illinois, and Mississippi." />
+    <meta property="og:image" content="https://vintagetax.com/og-image.jpg" />
+    <meta property="og:site_name" content="Vintage Tax" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://vintagetax.com/" />
+    <meta name="twitter:title" content="Vintage Tax | Tax Planning & Accounting Services" />
+    <meta name="twitter:description" content="Professional tax planning, accounting, bookkeeping, and payroll services. Serving 28+ cities across 4 states." />
+    <meta name="twitter:image" content="https://vintagetax.com/og-image.jpg" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://vintagetax.com/" />
+    
+    <!-- Structured Data (JSON-LD) for Multi-Location SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AccountingService",
+      "name": "Vintage Tax",
+      "alternateName": "Vintage Tax & Accounting",
+      "description": "Professional tax planning, accounting, bookkeeping, and payroll services. Serving businesses and individuals across Kansas, Missouri, Illinois, and Mississippi.",
+      "url": "https://vintagetax.com",
+      "telephone": "+15551234567",
+      "email": "contact@vintagetaxes.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Wichita",
+        "addressRegion": "KS",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        {
+          "@type": "State",
+          "name": "Kansas"
+        },
+        {
+          "@type": "State",
+          "name": "Missouri"
+        },
+        {
+          "@type": "State",
+          "name": "Illinois"
+        },
+        {
+          "@type": "State",
+          "name": "Mississippi"
+        }
+      ],
+      "serviceType": [
+        "Tax Planning",
+        "Tax Preparation",
+        "Accounting Services",
+        "Bookkeeping",
+        "Payroll Processing",
+        "Legal Compliance",
+        "Financial Consulting"
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "10:00",
+          "closes": "14:00"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "100"
+      }
+    }
+    </script>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230284c7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='12 2 21 7 21 17 12 22 3 17 3 7 12 2' fill='%23e0f2fe'/%3E%3Ctext x='12' y='16.5' font-family='serif' font-size='14' font-weight='bold' text-anchor='middle' fill='%230369a1' stroke='none'%3EV%3C/text%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <!-- <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              serif: ['Playfair Display', 'serif'],
-            },
-            colors: {
-              primary: {
-                50: '#f0f9ff',
-                100: '#e0f2fe',
-                200: '#bae6fd',
-                300: '#7dd3fc',
-                400: '#38bdf8',
-                500: '#0ea5e9',
-                600: '#0284c7',
-                700: '#0369a1',
-                800: '#075985',
-                900: '#0c4a6e', // Deep Blue
-                950: '#082f49',
-              },
-              accent: {
-                50: '#f0fdf4',
-                100: '#dcfce7',
-                200: '#bbf7d0',
-                300: '#86efac',
-                400: '#4ade80',
-                500: '#22c55e', // Vibrant Green
-                600: '#16a34a',
-                700: '#15803d',
-                800: '#166534',
-                900: '#14532d',
-              }
-            },
-            animation: {
-              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
-              'fade-in': 'fadeIn 0.8s ease-out forwards',
-              'slide-in-right': 'slideInRight 0.5s ease-out forwards',
-            },
-            keyframes: {
-              fadeInUp: {
-                '0%': { opacity: '0', transform: 'translateY(20px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
-              },
-              fadeIn: {
-                '0%': { opacity: '0' },
-                '100%': { opacity: '1' },
-              },
-              slideInRight: {
-                '0%': { opacity: '0', transform: 'translateX(20px)' },
-                '100%': { opacity: '1', transform: 'translateX(0)' },
-              }
-            }
-          }
-        }
-      }
-    </script> -->
     <style>
       /* Smooth scrolling for anchor links */
       html {

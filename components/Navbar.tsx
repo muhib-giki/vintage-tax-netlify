@@ -117,7 +117,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setPage }) => {
               className="ml-4 flex items-center gap-2 px-4 py-2 bg-accent-600 hover:bg-accent-500 text-white rounded-full font-medium text-sm transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
             >
               <Phone size={16} />
-              <span>(555) 123-4567</span>
+              <span>(316) 773-4127</span>
             </a>
           </div>
 

@@ -21,9 +21,9 @@ const Footer: React.FC<FooterProps> = ({ setPage }) => {
               Authentic, reliable, and precise accounting services for the modern era. Your trusted financial partner.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="bg-primary-900 p-2 rounded-lg hover:bg-accent-600 text-white transition-colors"><Linkedin size={18} /></a>
-              <a href="#" className="bg-primary-900 p-2 rounded-lg hover:bg-accent-600 text-white transition-colors"><Twitter size={18} /></a>
-              <a href="#" className="bg-primary-900 p-2 rounded-lg hover:bg-accent-600 text-white transition-colors"><Facebook size={18} /></a>
+              <a href="https://www.linkedin.com/company/vintage-tax-accounting/" className="bg-primary-900 p-2 rounded-lg hover:bg-accent-600 text-white transition-colors"><Linkedin size={18} /></a>
+              {/* <a href="#" className="bg-primary-900 p-2 rounded-lg hover:bg-accent-600 text-white transition-colors"><Twitter size={18} /></a>
+              <a href="#" className="bg-primary-900 p-2 rounded-lg hover:bg-accent-600 text-white transition-colors"><Facebook size={18} /></a> */}
             </div>
           </div>
 
@@ -55,7 +55,7 @@ const Footer: React.FC<FooterProps> = ({ setPage }) => {
               <p>Kansas, USA</p>
               <div className="flex flex-col gap-2">
                 <a href="mailto:contact@vintagetaxes.com" className="hover:text-accent-400 transition-colors">contact@vintagetaxes.com</a>
-                <a href="tel:+15551234567" className="hover:text-accent-400 transition-colors">+1 (555) 123-4567</a>
+                <a href="tel:+15551234567" className="hover:text-accent-400 transition-colors">+1 (316) 773-4127</a>
               </div>
 
               <a
