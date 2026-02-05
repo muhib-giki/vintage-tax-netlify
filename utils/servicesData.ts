@@ -24,10 +24,10 @@ export const servicesData = [
             'Quarterly Reviews & Adjustments'
         ],
         process: [
-            { step: '01', title: 'Discovery', desc: 'We analyze your past returns and current financial standing.' },
-            { step: '02', title: 'Strategy', desc: 'Our team architects a custom plan tailored to your goals.' },
-            { step: '03', title: 'Execution', desc: 'Implementation of tax positions and filing of documents.' },
-            { step: '04', title: 'Review', desc: 'Post-filing analysis and forward-looking adjustments.' }
+            { step: '01', title: 'Data Review', desc: 'We analyze your past returns and current year income projections.' },
+            { step: '02', title: 'Strategy Design', desc: 'Identifying tax credits, deductions, and deferral opportunities.' },
+            { step: '03', title: 'Implementation', desc: 'Executing entity adjustments and tax-advantaged contributions.' },
+            { step: '04', title: 'Monitoring', desc: 'Quarterly reviews to adjust for new laws or financial changes.' }
         ],
         image: 'https://images.unsplash.com/photo-1586486855514-8c633cc6fd38?auto=format&fit=crop&q=80',
         accent: 'bg-primary-600',
@@ -56,10 +56,10 @@ export const servicesData = [
             'Virtual CFO Services'
         ],
         process: [
-            { step: '01', title: 'Discovery', desc: 'We analyze your past returns and current financial standing.' },
-            { step: '02', title: 'Strategy', desc: 'Our team architects a custom plan tailored to your goals.' },
-            { step: '03', title: 'Execution', desc: 'Implementation of tax positions and filing of documents.' },
-            { step: '04', title: 'Review', desc: 'Post-filing analysis and forward-looking adjustments.' }
+            { step: '01', title: 'Infra Setup', desc: 'Connecting bank feeds and cloud accounting software.' },
+            { step: '02', title: 'Track Ops', desc: 'Daily/Weekly transaction mapping and categorization.' },
+            { step: '03', title: 'Reporting', desc: 'Generating monthly P&L, balance sheets, and KPIs.' },
+            { step: '04', title: 'CFO Advisory', desc: 'Strategic review of financial data for business growth.' }
         ],
         image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80',
         accent: 'bg-blue-600',
@@ -88,10 +88,10 @@ export const servicesData = [
             'Clean Audit Trails'
         ],
         process: [
-            { step: '01', title: 'Discovery', desc: 'We analyze your past returns and current financial standing.' },
-            { step: '02', title: 'Strategy', desc: 'Our team architects a custom plan tailored to your goals.' },
-            { step: '03', title: 'Execution', desc: 'Implementation of tax positions and filing of documents.' },
-            { step: '04', title: 'Review', desc: 'Post-filing analysis and forward-looking adjustments.' }
+            { step: '01', title: 'Onboarding', desc: 'Syncing data sources and receipt capture tools.' },
+            { step: '02', title: 'Reconciliation', desc: 'Cross-referencing bank statements with digital records.' },
+            { step: '03', title: 'Maintenance', desc: 'Clean-up of chart of accounts and vendor data.' },
+            { step: '04', title: 'Tax-Ready', desc: 'Ensuring books are audit-proof and tax-professional ready.' }
         ],
         image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80',
         accent: 'bg-emerald-600',
@@ -120,10 +120,10 @@ export const servicesData = [
             'Compliance Monitoring'
         ],
         process: [
-            { step: '01', title: 'Discovery', desc: 'We analyze your past returns and current financial standing.' },
-            { step: '02', title: 'Strategy', desc: 'Our team architects a custom plan tailored to your goals.' },
-            { step: '03', title: 'Execution', desc: 'Implementation of tax positions and filing of documents.' },
-            { step: '04', title: 'Review', desc: 'Post-filing analysis and forward-looking adjustments.' }
+            { step: '01', title: 'Setup W4/I9', desc: 'Collecting employee data and setting up pay schedules.' },
+            { step: '02', title: 'Computation', desc: 'Calculating gross pay, withholdings, and benefits.' },
+            { step: '03', title: 'Distribution', desc: 'Executing direct deposits and pay distributions.' },
+            { step: '04', title: 'Compliance', desc: 'Handling quarterly filings and annual W2/1099s.' }
         ],
         image: 'https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?auto=format&fit=crop&q=80',
         accent: 'bg-indigo-600',
@@ -152,10 +152,10 @@ export const servicesData = [
             'Regulatory Alerts'
         ],
         process: [
-            { step: '01', title: 'Discovery', desc: 'We analyze your past returns and current financial standing.' },
-            { step: '02', title: 'Strategy', desc: 'Our team architects a custom plan tailored to your goals.' },
-            { step: '03', title: 'Execution', desc: 'Implementation of tax positions and filing of documents.' },
-            { step: '04', title: 'Review', desc: 'Post-filing analysis and forward-looking adjustments.' }
+            { step: '01', title: 'Legal Audit', desc: 'Evaluating current standing with state and federal regulators.' },
+            { step: '02', title: 'Calendar Sync', desc: 'Establishing deadlines for renewals and reporting.' },
+            { step: '03', title: 'Documentation', desc: 'Preparing corporate resolutions and various filings.' },
+            { step: '04', title: 'Shield Ops', desc: 'Ongoing monitoring and registered agent representation.' }
         ],
         image: 'https://images.unsplash.com/photo-1479142506502-19b3a3b7ff33?auto=format&fit=crop&q=80',
         accent: 'bg-rose-600',
