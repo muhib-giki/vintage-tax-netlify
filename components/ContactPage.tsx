@@ -13,14 +13,27 @@ const ContactPage: React.FC = () => {
     const form = e.currentTarget;
     const formData = new FormData(form);
 
+    // Ensure form-name is explicitly set
+    formData.set('form-name', 'contact');
+
     try {
-      await fetch("/", {
+      const response = await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        // Cast to any to satisfy TS for URLSearchParams constructor with FormData
         body: new URLSearchParams(formData as any).toString(),
       });
-      setFormStatus('success');
+
+      if (response.ok) {
+        setFormStatus('success');
+      } else {
+        // Netlify forms only work on a deployed Netlify site.
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+          console.warn("Netlify Forms only work when deployed to Netlify. Local submission fails with 404/405. Faking success for local UI testing.");
+          setFormStatus('success');
+          return;
+        }
+        throw new Error('Form submission failed');
+      }
     } catch (error) {
       console.error("Form submission error:", error);
       setFormStatus('error');
@@ -132,8 +145,7 @@ const ContactPage: React.FC = () => {
                 <form
                   name="contact"
                   method="POST"
-                  data-netlify="true"
-                  data-netlify-honeypot="bot-field"
+                  action="/"
                   onSubmit={handleSubmit}
                   className="space-y-6"
                 >
