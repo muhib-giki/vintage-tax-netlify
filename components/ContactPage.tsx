@@ -146,6 +146,7 @@ const ContactPage: React.FC = () => {
                   name="contact"
                   method="POST"
                   action="/contact"
+                  data-netlify="true"
                   data-netlify-honeypot="bot-field"
                   onSubmit={handleSubmit}
                   className="space-y-6"
