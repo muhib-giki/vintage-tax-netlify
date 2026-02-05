@@ -17,7 +17,7 @@ const ContactPage: React.FC = () => {
     formData.set('form-name', 'contact');
 
     try {
-      const response = await fetch(window.location.pathname, {
+      const response = await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formData as any).toString(),
@@ -145,7 +145,7 @@ const ContactPage: React.FC = () => {
                 <form
                   name="contact"
                   method="POST"
-                  action="/contact"
+                  action="/"
                   data-netlify="true"
                   data-netlify-honeypot="bot-field"
                   onSubmit={handleSubmit}
@@ -219,7 +219,7 @@ const ContactPage: React.FC = () => {
                       <input
                         name="city"
                         required
-                        type="city"
+                        type="text"
                         className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
                         placeholder="Boston"
                       />
