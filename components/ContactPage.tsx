@@ -17,7 +17,7 @@ const ContactPage: React.FC = () => {
     formData.set('form-name', 'contact');
 
     try {
-      const response = await fetch("/", {
+      const response = await fetch(window.location.pathname, {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formData as any).toString(),
@@ -145,7 +145,8 @@ const ContactPage: React.FC = () => {
                 <form
                   name="contact"
                   method="POST"
-                  action="/"
+                  action="/contact"
+                  data-netlify-honeypot="bot-field"
                   onSubmit={handleSubmit}
                   className="space-y-6"
                 >
@@ -217,7 +218,7 @@ const ContactPage: React.FC = () => {
                       <input
                         name="city"
                         required
-                        type="text"
+                        type="city"
                         className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
                         placeholder="Boston"
                       />
@@ -267,7 +268,7 @@ const ContactPage: React.FC = () => {
                     className="w-full bg-primary-600 text-white font-bold py-4 rounded-xl hover:bg-primary-700 transition-all shadow-lg hover:shadow-primary-500/30 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
                   >
                     {formStatus === 'submitting' ? 'Sending...' : 'Send Message'}
-                    {!formStatus && <Send size={18} />}
+                    {formStatus === 'idle' && <Send size={18} />}
                   </button>
                 </form>
               )}
