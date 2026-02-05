@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useRef, useEffect } from 'react';
 import { Star, ChevronLeft, ChevronRight, Quote, CheckCircle2 } from 'lucide-react';
 import { Testimonial } from '../types';

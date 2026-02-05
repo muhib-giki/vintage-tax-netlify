@@ -1,12 +1,10 @@
 import React from 'react';
 import { DollarSign } from 'lucide-react';
-import { PageState } from '../types';
-
 interface GridServiceItem {
   title: string;
   description: string;
   image: string;
-  pageState: PageState;
+  path: string;
 }
 
 const services: GridServiceItem[] = [
@@ -15,43 +13,43 @@ const services: GridServiceItem[] = [
     description: 'Proactive multi-year forecasting utilizing Form 1040 and 1065 strategies to minimize liabilities.',
     // Image: Tax Forms / 1040
     image: 'https://images.unsplash.com/photo-1586486855514-8c633cc6fd38?auto=format&fit=crop&q=80&w=800',
-    pageState: PageState.SERVICE_TAX_PLANNING
+    path: '/services/tax-planning'
   },
   {
     title: 'Full Cycle Accounting',
     description: 'End-to-end management from general ledgers to C-suite financial reporting.',
     // Image: Calculator, Ledger, Financial Papers (Fixed broken link)
     image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800',
-    pageState: PageState.SERVICE_ACCOUNTING
+    path: '/services/accounting'
   },
   {
     title: 'Bookkeeping',
     description: 'Meticulous record-keeping ensuring every penny is accurately tracked via modern software.',
     // Image: Laptop with software
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800',
-    pageState: PageState.SERVICE_BOOKKEEPING
+    path: '/services/bookkeeping'
   },
   {
     title: 'Payroll Processing',
     description: 'Seamless, compliant W2 & 1099 management ensuring your team is paid on time.',
     // Image: Stacks of Money / Financial Distribution
     image: 'https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?auto=format&fit=crop&q=80&w=800',
-    pageState: PageState.SERVICE_PAYROLL
+    path: '/services/payroll'
   },
   {
     title: 'Legal Compliances',
     description: 'Navigating complex regulatory frameworks so your business never misses a deadline.',
     // Image: Scale of Justice and Legal Documents/Books
     image: 'https://images.unsplash.com/photo-1479142506502-19b3a3b7ff33?auto=format&fit=crop&q=80&w=800',
-    pageState: PageState.SERVICE_LEGAL
+    path: '/services/legal'
   },
 ];
 
-interface ServicesProps {
-  setPage: (page: PageState) => void;
-}
+import Link from 'next/link';
 
-const Services: React.FC<ServicesProps> = ({ setPage }) => {
+interface ServicesProps { }
+
+const Services: React.FC<ServicesProps> = () => {
   return (
     <div className="py-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -70,7 +68,7 @@ const Services: React.FC<ServicesProps> = ({ setPage }) => {
               <div className="h-56 relative">
                 <img
                   src={service.image}
-                  alt={service.title}
+                  alt={`${service.title} - ${service.description.substring(0, 50)}...`}
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -83,12 +81,12 @@ const Services: React.FC<ServicesProps> = ({ setPage }) => {
                   {service.description}
                 </p>
                 <div>
-                  <button
-                    onClick={() => setPage(service.pageState)}
-                    className="bg-primary-600 text-white font-bold py-2 px-6 rounded hover:bg-primary-700 transition-colors text-sm"
+                  <Link
+                    href={service.path}
+                    className="bg-primary-600 text-white font-bold py-2 px-6 rounded hover:bg-primary-700 transition-colors text-sm inline-block"
                   >
                     Learn More
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -112,12 +110,12 @@ const Services: React.FC<ServicesProps> = ({ setPage }) => {
                 Have a unique situation? Book a free discovery call with our senior partners to discuss your specific needs.
               </p>
               <div>
-                <button
-                  onClick={() => setPage(PageState.CONTACT)}
-                  className="bg-accent-600 text-white font-bold py-2 px-6 rounded hover:bg-accent-700 transition-colors text-sm"
+                <Link
+                  href="/contact"
+                  className="bg-accent-600 text-white font-bold py-2 px-6 rounded hover:bg-accent-700 transition-colors text-sm inline-block"
                 >
                   Book Now
-                </button>
+                </Link>
               </div>
             </div>
           </div>

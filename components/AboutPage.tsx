@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState, useRef } from 'react';
 import { Clock, Users, Award, CheckCircle2, ArrowRight, Target, Shield, Landmark, BookOpen, History } from 'lucide-react';
 

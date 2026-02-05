@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, useEffect, useRef } from 'react';
 import { Send, Bot, User, RefreshCw, AlertCircle, Loader2, Sparkles } from 'lucide-react';
 import { sendMessageToGemini, resetChatSession } from '../services/geminiService';
@@ -9,7 +10,7 @@ const AiAssistant: React.FC = () => {
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  
+
   // Ref for the scrollable container instead of an element at the end
   const chatContainerRef = useRef<HTMLDivElement>(null);
 
@@ -40,9 +41,9 @@ const AiAssistant: React.FC = () => {
       setMessages(prev => [...prev, { role: 'model', text: '' }]);
 
       const stream = await sendMessageToGemini(userMessage);
-      
+
       let fullResponse = "";
-      
+
       for await (const chunk of stream) {
         fullResponse += chunk;
         setMessages(prev => {
@@ -57,7 +58,7 @@ const AiAssistant: React.FC = () => {
 
     } catch (error) {
       setMessages(prev => [
-        ...prev, 
+        ...prev,
         { role: 'model', text: 'I apologize, but I encountered an error processing your request. Please try again later.', isError: true }
       ]);
     } finally {
@@ -74,12 +75,12 @@ const AiAssistant: React.FC = () => {
     <div className="max-w-4xl mx-auto px-4 py-16">
       <div className="text-center mb-10">
         <div className="inline-flex items-center justify-center p-3 bg-primary-100 rounded-full text-primary-600 mb-4">
-            <Bot size={32} />
+          <Bot size={32} />
         </div>
         <h2 className="font-serif text-4xl font-bold text-primary-900 mb-4">Ask Vincent</h2>
         <p className="text-slate-600 max-w-2xl mx-auto">
-          Our AI-powered assistant trained to provide general guidance on US taxation and our firm's services. 
-          <br/><span className="text-xs text-slate-500 italic">*Not legal advice.</span>
+          Our AI-powered assistant trained to provide general guidance on US taxation and our firm's services.
+          <br /><span className="text-xs text-slate-500 italic">*Not legal advice.</span>
         </p>
       </div>
 
@@ -93,7 +94,7 @@ const AiAssistant: React.FC = () => {
             </div>
             <span className="font-medium tracking-wide">Vincent AI</span>
           </div>
-          <button 
+          <button
             onClick={handleReset}
             className="text-primary-200 hover:text-white transition-colors p-2 hover:bg-primary-800 rounded-full"
             title="Reset Conversation"
@@ -103,38 +104,36 @@ const AiAssistant: React.FC = () => {
         </div>
 
         {/* Messages Area */}
-        <div 
+        <div
           ref={chatContainerRef}
           className="flex-1 overflow-y-auto p-6 bg-slate-50/50 space-y-6 scroll-smooth"
         >
           {messages.map((msg, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'} animate-fade-in`}
             >
               <div className={`flex max-w-[85%] ${msg.role === 'user' ? 'flex-row-reverse' : 'flex-row'}`}>
-                <div className={`flex-shrink-0 h-10 w-10 rounded-full flex items-center justify-center shadow-md ${
-                  msg.role === 'user' ? 'bg-gradient-to-br from-accent-500 to-accent-600 ml-3' : 'bg-gradient-to-br from-primary-600 to-primary-700 mr-3'
-                }`}>
+                <div className={`flex-shrink-0 h-10 w-10 rounded-full flex items-center justify-center shadow-md ${msg.role === 'user' ? 'bg-gradient-to-br from-accent-500 to-accent-600 ml-3' : 'bg-gradient-to-br from-primary-600 to-primary-700 mr-3'
+                  }`}>
                   {msg.role === 'user' ? <User size={18} className="text-white" /> : <Bot size={18} className="text-white" />}
                 </div>
-                
-                <div className={`p-5 rounded-2xl shadow-sm text-sm leading-relaxed ${
-                  msg.role === 'user' 
-                    ? 'bg-white text-slate-800 border border-slate-100 rounded-tr-sm' 
-                    : msg.isError 
+
+                <div className={`p-5 rounded-2xl shadow-sm text-sm leading-relaxed ${msg.role === 'user'
+                    ? 'bg-white text-slate-800 border border-slate-100 rounded-tr-sm'
+                    : msg.isError
                       ? 'bg-red-50 text-red-800 border border-red-100 rounded-tl-sm'
                       : 'bg-primary-50 text-slate-800 border border-primary-100 rounded-tl-sm'
-                }`}>
-                   {msg.isError && <AlertCircle size={16} className="inline mr-2 mb-1" />}
-                   <div className="whitespace-pre-wrap">{msg.text}</div>
-                   {msg.role === 'model' && !msg.isError && isLoading && index === messages.length - 1 && msg.text === '' && (
-                     <div className="flex space-x-1.5 mt-1">
-                       <div className="w-2 h-2 bg-primary-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
-                       <div className="w-2 h-2 bg-primary-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
-                       <div className="w-2 h-2 bg-primary-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
-                     </div>
-                   )}
+                  }`}>
+                  {msg.isError && <AlertCircle size={16} className="inline mr-2 mb-1" />}
+                  <div className="whitespace-pre-wrap">{msg.text}</div>
+                  {msg.role === 'model' && !msg.isError && isLoading && index === messages.length - 1 && msg.text === '' && (
+                    <div className="flex space-x-1.5 mt-1">
+                      <div className="w-2 h-2 bg-primary-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+                      <div className="w-2 h-2 bg-primary-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+                      <div className="w-2 h-2 bg-primary-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

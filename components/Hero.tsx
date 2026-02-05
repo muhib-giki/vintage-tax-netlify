@@ -1,9 +1,9 @@
+"use client";
 import React, { useEffect, useState, useRef } from 'react';
-import { PageState } from '../types';
 import { ArrowRight, Sparkles, CheckCircle2, PenTool, Shield, FileText, TrendingUp, MousePointer2, Phone, Calendar, Mail } from 'lucide-react';
+import Link from 'next/link';
 
 interface HeroProps {
-   setPage: (page: PageState) => void;
 }
 
 const SigningAnimation = () => {
@@ -185,7 +185,7 @@ const SigningAnimation = () => {
    );
 };
 
-const Hero: React.FC<HeroProps> = ({ setPage }) => {
+const Hero: React.FC<HeroProps> = () => {
    const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
    useEffect(() => {
@@ -258,14 +258,14 @@ const Hero: React.FC<HeroProps> = ({ setPage }) => {
 
                   {/* CTA Buttons */}
                   <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up [animation-delay:600ms] opacity-0 mb-8">
-                     <button
-                        onClick={() => setPage(PageState.CONTACT)}
+                     <Link
+                        href="/contact"
                         className="group px-6 py-3 bg-accent-600 hover:bg-accent-500 text-white font-bold rounded-full transition-all shadow-lg hover:shadow-accent-500/30 hover:scale-105 flex items-center justify-center gap-2 whitespace-nowrap"
                      >
                         <Mail size={20} />
                         <span>Get Your Free Consultation</span>
                         <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                     </button>
+                     </Link>
 
                      <a
                         href="tel:+15551234567"
@@ -283,7 +283,7 @@ const Hero: React.FC<HeroProps> = ({ setPage }) => {
                      <div className="flex -space-x-4">
                         {[1, 2, 3].map(i => (
                            <div key={i} className="w-12 h-12 rounded-full border-2 border-primary-950 bg-slate-800 overflow-hidden relative z-0 hover:z-10 hover:scale-110 transition-transform">
-                              <img src={`https://i.pravatar.cc/100?img=${i + 15}`} alt="Client" className="w-full h-full object-cover" />
+                              <img src={`https://i.pravatar.cc/100?img=${i + 15}`} alt={`Satisfied Client ${i}`} className="w-full h-full object-cover" />
                            </div>
                         ))}
                         <div className="w-12 h-12 rounded-full border-2 border-primary-950 bg-primary-800 flex items-center justify-center text-xs font-bold relative z-0">

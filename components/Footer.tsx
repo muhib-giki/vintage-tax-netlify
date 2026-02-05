@@ -1,12 +1,13 @@
 import React from 'react';
 import { Hexagon, Linkedin, Twitter, Facebook, ArrowUp } from 'lucide-react';
+import Link from 'next/link';
 import { PageState } from '../types';
 
 interface FooterProps {
   setPage: (page: PageState) => void;
 }
 
-const Footer: React.FC<FooterProps> = ({ setPage }) => {
+const Footer: React.FC = () => {
   return (
     <footer className="bg-primary-950 text-primary-100 py-16 border-t border-primary-900 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -22,30 +23,28 @@ const Footer: React.FC<FooterProps> = ({ setPage }) => {
             </p>
             <div className="flex space-x-4">
               <a href="https://www.linkedin.com/company/vintage-tax-accounting/" className="bg-primary-900 p-2 rounded-lg hover:bg-accent-600 text-white transition-colors"><Linkedin size={18} /></a>
-              {/* <a href="#" className="bg-primary-900 p-2 rounded-lg hover:bg-accent-600 text-white transition-colors"><Twitter size={18} /></a>
-              <a href="#" className="bg-primary-900 p-2 rounded-lg hover:bg-accent-600 text-white transition-colors"><Facebook size={18} /></a> */}
             </div>
           </div>
 
           <div>
             <h4 className="text-white font-bold mb-6 text-lg">Services</h4>
             <ul className="space-y-3 text-sm text-primary-300">
-              <li className="hover:text-accent-400 cursor-pointer transition-colors">Strategic Tax Planning</li>
-              <li className="hover:text-accent-400 cursor-pointer transition-colors">Full Cycle Accounting</li>
-              <li className="hover:text-accent-400 cursor-pointer transition-colors">Bookkeeping</li>
-              <li className="hover:text-accent-400 cursor-pointer transition-colors">Payroll Processing</li>
-              <li className="hover:text-accent-400 cursor-pointer transition-colors">Legal Compliances</li>
+              <li><Link href="/services/tax-planning" className="hover:text-accent-400 cursor-pointer transition-colors">Strategic Tax Planning</Link></li>
+              <li><Link href="/services/accounting" className="hover:text-accent-400 cursor-pointer transition-colors">Full Cycle Accounting</Link></li>
+              <li><Link href="/services/bookkeeping" className="hover:text-accent-400 cursor-pointer transition-colors">Bookkeeping</Link></li>
+              <li><Link href="/services/payroll" className="hover:text-accent-400 cursor-pointer transition-colors">Payroll Processing</Link></li>
+              <li><Link href="/services/legal" className="hover:text-accent-400 cursor-pointer transition-colors">Legal Compliances</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-white font-bold mb-6 text-lg">Useful Links</h4>
             <ul className="space-y-3 text-sm text-primary-300">
-              <li onClick={() => setPage(PageState.HOME)} className="hover:text-accent-400 cursor-pointer transition-colors">Home</li>
-              <li onClick={() => setPage(PageState.SERVICES)} className="hover:text-accent-400 cursor-pointer transition-colors">Services</li>
-              <li onClick={() => setPage(PageState.ABOUT)} className="hover:text-accent-400 cursor-pointer transition-colors">About Us</li>
-              <li onClick={() => setPage(PageState.CONTACT)} className="hover:text-accent-400 cursor-pointer transition-colors">Contact</li>
-              <li onClick={() => setPage(PageState.AI_ASSISTANT)} className="hover:text-accent-400 cursor-pointer transition-colors">AI Assistant</li>
+              <li><Link href="/" className="hover:text-accent-400 cursor-pointer transition-colors">Home</Link></li>
+              <li><Link href="/services" className="hover:text-accent-400 cursor-pointer transition-colors">Services</Link></li>
+              <li><Link href="/about" className="hover:text-accent-400 cursor-pointer transition-colors">About Us</Link></li>
+              <li><Link href="/contact" className="hover:text-accent-400 cursor-pointer transition-colors">Contact</Link></li>
+              <li><Link href="/ai" className="hover:text-accent-400 cursor-pointer transition-colors">AI Assistant</Link></li>
             </ul>
           </div>
 

@@ -1,12 +1,10 @@
 import React from 'react';
 import { Phone, ArrowRight, Calendar, Mail } from 'lucide-react';
-import { PageState } from '../types';
+import Link from 'next/link';
 
-interface CallToActionProps {
-    setPage: (page: PageState) => void;
-}
+interface CallToActionProps { }
 
-const CallToAction: React.FC<CallToActionProps> = ({ setPage }) => {
+const CallToAction: React.FC<CallToActionProps> = () => {
     return (
         <div className="relative bg-slate-900 py-24 overflow-hidden isolate">
             {/* Background Effects */}
@@ -46,14 +44,14 @@ const CallToAction: React.FC<CallToActionProps> = ({ setPage }) => {
                     </a>
 
                     {/* Direct Form Button */}
-                    <button
-                        onClick={() => setPage(PageState.CONTACT)}
+                    <Link
+                        href="/contact"
                         className="group px-8 py-4 bg-accent-600 hover:bg-accent-500 text-white font-bold rounded-full transition-all shadow-lg hover:shadow-accent-500/30 hover:scale-105 flex items-center gap-3 min-w-[240px] justify-center"
                     >
                         <Mail size={20} />
                         <span>Get Your Free Consultation</span>
                         <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                    </button>
+                    </Link>
                 </div>
 
                 <p className="mt-8 text-sm text-slate-400 font-medium">

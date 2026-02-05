@@ -4,9 +4,15 @@ import { GoogleGenAI, Chat, GenerateContentResponse } from "@google/genai";
 // Note: In a real deployment, ensure process.env.GEMINI_API_KEY is set.
 // console.log("process.env.GEMINI_API_KEY_KEY: ", process.env.GEMINI_API_KEY_KEY);
 
-const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
-console.log("API_KEY: ", API_KEY);
-const ai = new GoogleGenAI({ apiKey: API_KEY });
+let ai: GoogleGenAI | null = null;
+
+const getAiClient = () => {
+  if (!ai) {
+    const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY || "dummy_key_for_build";
+    ai = new GoogleGenAI({ apiKey });
+  }
+  return ai;
+};
 
 const SYSTEM_INSTRUCTION = `
 You are "Vincent", the virtual assistant for Vintage Tax, a prestigious US taxation and accounting firm.
@@ -22,9 +28,11 @@ IMPORTANT RULES:
 
 let chatSession: Chat | null = null;
 
+
 export const getChatSession = (): Chat => {
   if (!chatSession) {
-    chatSession = ai.chats.create({
+    const client = getAiClient();
+    chatSession = client.chats.create({
       model: 'gemini-2.5-flash',
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
@@ -36,10 +44,10 @@ export const getChatSession = (): Chat => {
 
 export const sendMessageToGemini = async (message: string): Promise<AsyncIterable<string>> => {
   const chat = getChatSession();
-  
+
   try {
     const resultStream = await chat.sendMessageStream({ message });
-    
+
     // Return an async iterable that yields text chunks
     return {
       [Symbol.asyncIterator]: async function* () {
