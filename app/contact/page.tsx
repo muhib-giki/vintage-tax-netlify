@@ -1,6 +1,8 @@
 import ContactPage from '@/components/ContactPage';
 import { Metadata } from 'next';
 
+export const dynamic = "force-static";
+
 export const metadata: Metadata = {
     title: 'Contact Us | Vintage Tax & Accounting - Get Expert Tax Help',
     description: 'Contact Vintage Tax & Accounting for professional tax planning, accounting, bookkeeping, and payroll services. Call (316) 773-4127 or schedule a free consultation today.',

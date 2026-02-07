@@ -1,42 +1,92 @@
 "use client";
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, ArrowRight, MessageSquare, ChevronDown, ChevronUp, Send, CheckCircle2, Building2, Globe, AlertCircle } from 'lucide-react';
+import { supabase } from '../lib/supabase';
 
 const ContactPage: React.FC = () => {
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [activeAccordion, setActiveAccordion] = useState<number | null>(0);
 
+  // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   setFormStatus('submitting');
+
+  //   const form = e.currentTarget;
+  //   const formData = new FormData(form);
+
+  //   // Ensure form-name is explicitly set
+  //   formData.set('form-name', 'contact');
+
+  //   try {
+  //     const response = await fetch("/", {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/x-www-form-urlencoded" },
+  //       body: new URLSearchParams(formData as any).toString(),
+  //     });
+
+  //     if (response.ok) {
+  //       setFormStatus('success');
+  //     } else {
+  //       // Netlify forms only work on a deployed Netlify site.
+  //       if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+  //         console.warn("Netlify Forms only work when deployed to Netlify. Local submission fails with 404/405. Faking success for local UI testing.");
+  //         setFormStatus('success');
+  //         return;
+  //       }
+  //       throw new Error('Form submission failed');
+  //     }
+  //   } catch (error) {
+  //     console.error("Form submission error:", error);
+  //     setFormStatus('error');
+  //   }
+  // };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setFormStatus('submitting');
+    setFormStatus("submitting");
 
     const form = e.currentTarget;
     const formData = new FormData(form);
 
-    // Ensure form-name is explicitly set
-    formData.set('form-name', 'contact');
+    // Map form fields to Supabase column names
+    const submissionData: any = {
+      first_name: formData.get('firstName'),
+      last_name: formData.get('lastName'),
+      phone: formData.get('phone'),
+      email: formData.get('email'),
+      address: formData.get('address'),
+      city: formData.get('city'),
+      state: formData.get('state'),
+      zipcode: formData.get('zip'),
+      detailed_query: formData.get('message'),
+      user_agent: typeof window !== 'undefined' ? window.navigator.userAgent : null,
+    };
 
     try {
-      const response = await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData as any).toString(),
-      });
-
-      if (response.ok) {
-        setFormStatus('success');
-      } else {
-        // Netlify forms only work on a deployed Netlify site.
-        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-          console.warn("Netlify Forms only work when deployed to Netlify. Local submission fails with 404/405. Faking success for local UI testing.");
-          setFormStatus('success');
-          return;
-        }
-        throw new Error('Form submission failed');
+      // Get client IP address
+      try {
+        console.log("Fetching IP address...");
+        const ipRes = await fetch('https://api.ipify.org?format=json');
+        const ipData = await ipRes.json();
+        submissionData.ip_address = ipData.ip;
+        console.log("Captured IP:", submissionData.ip_address);
+      } catch (ipErr) {
+        console.warn("Could not fetch IP address:", ipErr);
       }
-    } catch (error) {
-      console.error("Form submission error:", error);
-      setFormStatus('error');
+
+      console.log("Final submission data being sent to Supabase:", submissionData);
+
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert([submissionData]);
+
+      if (error) throw error;
+
+      setFormStatus("success");
+      form.reset();
+    } catch (err) {
+      console.error("Form submission error:", err);
+      setFormStatus("error");
     }
   };
 
@@ -143,17 +193,9 @@ const ContactPage: React.FC = () => {
                 </div>
               ) : (
                 <form
-                  name="contact"
-                  method="POST"
-                  action="/"
-                  data-netlify="true"
-                  data-netlify-honeypot="bot-field"
                   onSubmit={handleSubmit}
                   className="space-y-6"
                 >
-                  {/* Hidden Input for Netlify Forms */}
-                  <input type="hidden" name="form-name" value="contact" />
-                  <input type="hidden" name="bot-field" />
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
