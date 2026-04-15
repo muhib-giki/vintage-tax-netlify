@@ -54,7 +54,7 @@ const Footer: React.FC = () => {
               <p>Kansas, USA</p>
               <div className="flex flex-col gap-2">
                 <a href="mailto:contact@vintagetaxes.com" className="hover:text-accent-400 transition-colors">contact@vintagetaxes.com</a>
-                <a href="tel:+15551234567" className="hover:text-accent-400 transition-colors">+1 (316) 773-4127</a>
+                <a href="tel:+15551234567" className="hover:text-accent-400 transition-colors">+1 (312) 656-7753</a>
               </div>
 
               <a

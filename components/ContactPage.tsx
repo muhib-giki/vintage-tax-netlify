@@ -185,7 +185,7 @@ const ContactPage: React.FC = () => {
                         required
                         type="tel"
                         className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
-                        placeholder="+1 (316) 773-4127"
+                        placeholder="+1 (312) 656-7753"
                       />
                     </div>
                     <div className="space-y-2">
