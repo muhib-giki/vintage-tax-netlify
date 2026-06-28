@@ -120,7 +120,7 @@ const Navbar: React.FC = () => {
               className="ml-4 flex items-center gap-2 px-6 py-2.5 bg-accent-600 hover:bg-accent-700 text-white rounded-full font-bold text-base transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
             >
               <Phone size={18} className="fill-current" />
-              <span>(312) 656-7753</span>
+              <span>(316) 773-4127</span>
             </a>
           </div>
 
