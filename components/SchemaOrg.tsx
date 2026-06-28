@@ -45,7 +45,7 @@ export const localBusinessSchema = {
         "longitude": -97.4392
     },
     "url": "https://vintagetaxes.com",
-    "telephone": "+13126567753",
+    "telephone": "+13167734127",
     "openingHoursSpecification": [
         {
             "@type": "OpeningHoursSpecification",
